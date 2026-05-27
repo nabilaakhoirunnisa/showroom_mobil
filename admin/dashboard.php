@@ -88,7 +88,7 @@ $queryTransaksi = mysqli_query($koneksi, "
                         <h1 class="h3 mb-1 text-gray-800 font-weight-bold">Dashboard Admin</h1>
                         <p class="mb-0 text-gray-600">
                             Selamat datang, <?= htmlspecialchars($username); ?>.
-                            Berikut ringkasan data terbaru showroom mobil.
+                            Berikut ringkasan data terbaru Galaxy Showroom.
                         </p>
                     </div>
 
