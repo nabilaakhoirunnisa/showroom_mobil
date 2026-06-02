@@ -2,7 +2,13 @@
 session_start();
 include "../config/koneksi.php";
 
-if(!isset($_SESSION['role']) || $_SESSION['role'] != "admin"){
+if(
+   !isset($_SESSION['role']) ||
+   (
+      $_SESSION['role'] != "admin" &&
+      $_SESSION['role'] != "kurir"
+   )
+){
     header("Location: ../auth/login.php");
     exit;
 }

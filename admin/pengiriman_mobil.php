@@ -309,11 +309,7 @@ if(!$data){
 
                                             <td class="text-center">
                                                 <div class="d-flex justify-content-center align-items-center style-gap" style="gap: 4px;">
-                                                    <a href="pengiriman_mobil.php?surat_jalan=<?= $row['id_pengiriman']; ?>"
-                                                       class="btn btn-sm btn-success btn-icon"
-                                                       title="Cetak Berkas Surat Jalan Kendaraan">
-                                                        <i class="fas fa-print"></i>
-                                                    </a>
+                                                    
 
                                                     <a href="pengiriman_mobil.php?hapus=<?= $row['id_pengiriman']; ?>"
                                                        class="btn btn-sm btn-danger btn-icon"

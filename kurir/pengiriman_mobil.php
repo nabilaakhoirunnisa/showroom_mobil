@@ -314,10 +314,16 @@ if(!$data){
                                             <td>
                                                 <?php if($row['status'] == 'diproses'){ ?>
 
+                                                    <a href="../admin/surat_jalan.php?id=<?= $row['id_pengiriman']; ?>"
+                                                    target="_blank"
+                                                    class="btn btn-sm btn-success mb-1">
+                                                    <i class="fas fa-print"></i> Surat Jalan
+                                                    </a>
+                                                    <br>
                                                     <a href="pengiriman_mobil.php?mulai=<?= $row['id_pengiriman']; ?>"
-                                                       class="btn btn-sm btn-info"
-                                                       onclick="return confirm('Mulai kirim mobil ini?')">
-                                                        <i class="fas fa-truck"></i> Mulai Kirim
+                                                    class="btn btn-sm btn-info"
+                                                    onclick="return confirm('Mulai kirim mobil ini?')">
+                                                    <i class="fas fa-truck"></i> Mulai Kirim
                                                     </a>
 
                                                 <?php } elseif($row['status'] == 'dikirim'){ ?>

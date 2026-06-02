@@ -33,7 +33,7 @@ foreach($columns as $col => $sql){
 | TERIMA PENAWARAN
 |------------------------------------------------------
 */
-if(isset($_POST['terima'])){
+if(isset($_POST['proses_verifikasi']) && $_POST['keputusan_status'] == 'diterima'){
 
     $id_penawaran = mysqli_real_escape_string($koneksi, $_POST['id_penawaran']);
     $metode       = mysqli_real_escape_string($koneksi, $_POST['metode_pembayaran']);
@@ -199,7 +199,7 @@ if(isset($_POST['terima'])){
 | TOLAK PENAWARAN
 |------------------------------------------------------
 */
-if(isset($_POST['tolak'])){
+if(isset($_POST['proses_verifikasi']) && $_POST['keputusan_status'] == 'tolak'){
 
     $id_penawaran = mysqli_real_escape_string($koneksi, $_POST['id_penawaran']);
     $catatan      = mysqli_real_escape_string($koneksi, $_POST['catatan_admin'] ?? '');
