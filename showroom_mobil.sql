@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 26, 2026 at 07:22 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Generation Time: Jun 02, 2026 at 07:41 AM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,14 +34,14 @@ CREATE TABLE `admin` (
   `alamat` text DEFAULT NULL,
   `no_hp` varchar(15) DEFAULT NULL,
   `foto` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`id_admin`, `id_user`, `nama`, `alamat`, `no_hp`, `foto`) VALUES
-(1, 18, 'Mahesa Ibrahim', 'JL ARIA SANTIKA GG SAMAUN RT 3 RW 3 SUMUR PACING KARAWACI KOTA TANGERANG BANTEN', '089627912778', '1779366825_profil_18.jpeg');
+(1, 18, 'Mahesa Ibrahim', 'JL ARIA SANTIKA GG SAMAUN RT 3 RW 3 SUMUR PACING KARAWACI KOTA TANGERANG BANTEN', '089627912778', '1779804695_profil_18.jpg');
 
 -- --------------------------------------------------------
 
@@ -60,7 +60,7 @@ CREATE TABLE `administrasi_kendaraan` (
   `catatan` text DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -75,7 +75,7 @@ CREATE TABLE `kurir` (
   `alamat` text DEFAULT NULL,
   `no_hp` varchar(15) DEFAULT NULL,
   `foto` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `kurir`
@@ -95,7 +95,7 @@ CREATE TABLE `kwitansi` (
   `id_pembayaran` int(11) DEFAULT NULL,
   `tanggal_cetak` datetime DEFAULT NULL,
   `total` decimal(15,2) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -108,7 +108,7 @@ CREATE TABLE `laporan` (
   `periode` varchar(30) DEFAULT NULL,
   `total_penjualan` decimal(15,2) DEFAULT NULL,
   `total_pendapatan` decimal(15,2) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -126,17 +126,18 @@ CREATE TABLE `mobil` (
   `deskripsi` text NOT NULL,
   `tahun` year(4) NOT NULL,
   `foto` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `mobil`
 --
 
 INSERT INTO `mobil` (`id_mobil`, `id_penjual`, `nama_mobil`, `harga`, `stok`, `status`, `deskripsi`, `tahun`, `foto`) VALUES
-(16, 3, 'Honda Civic FL5', 425000000, 1, 'tersedia', 'Honda Civic 2021 – Sedan premium dengan desain sporty dan performa bertenaga yang siap pakai.\r\n\r\nSpesifikasi & Kondisi:\r\n\r\nTransmisi: Otomatis (CVT) halus dan responsif\r\n\r\nWarna: Hitam Metalik\r\n\r\nOdometer: 35.000 KM (Low KM, pemakaian apik)\r\n\r\nSurat: Lengkap (STNK, BPKB, Pajak hidup)\r\n\r\nKeunggulan:\r\n\r\nMesin turbo yang bertenaga namun tetap irit bahan bakar.\r\n\r\nDesain eksterior agresif dengan interior mewah berbahan premium.\r\n\r\nFitur canggih termasuk layar sentuh modern dan sistem keselamatan lengkap.\r\n\r\nKondisi istimewa, mesin kering, kaki-kaki senyap, serta bebas banjir dan tabrakan.', '2021', 'da5374831dd107eb09f9313668823d43.jpg'),
-(20, 3, 'Alphard HEV', 2000000000, 1, 'tersedia', 'Toyota Alphard HEV bekas kondisi sangat terawat dan siap pakai. Mengusung mesin hybrid yang irit bahan bakar namun tetap bertenaga, cocok untuk penggunaan harian maupun perjalanan jauh. Interior mewah dan kabin super lega memberikan kenyamanan maksimal untuk keluarga maupun kebutuhan bisnis.\r\n\r\nSpesifikasi singkat:\r\n\r\nMesin Hybrid Electric Vehicle (HEV)\r\nTransmisi otomatis\r\nInterior captain seat premium\r\nSunroof / moonroof\r\nHead unit modern & kamera parkir\r\nAC digital double blower\r\nDoor elektrik & smart key\r\nKilometer rendah dan terawat\r\n\r\nKondisi:\r\n\r\nMesin halus dan normal\r\nPajak hidup\r\nInterior bersih dan rapi\r\nKaki-kaki nyaman\r\nBody mulus\r\nSiap pakai tanpa PR', '2020', '1779376910_8169e7bb1301c57fe025a495139ea1cf.jpg'),
-(21, 3, 'BYD Seal', 250000000, 1, 'tersedia', 'BYD kondisi bekas terawat dan siap pakai. Hadir dengan desain modern dan teknologi canggih yang memberikan kenyamanan serta performa responsif saat berkendara. Cocok digunakan untuk harian maupun perjalanan jauh dengan konsumsi energi yang efisien.\r\n\r\nSpesifikasi singkat:\r\n\r\nMotor listrik bertenaga & responsif\r\nTransmisi otomatis\r\nInterior premium modern\r\nHead unit touchscreen\r\nKamera parkir & sensor\r\nAC digital\r\nSmart key & start stop button\r\nFitur keselamatan lengkap\r\n\r\nKondisi:\r\n\r\nBody mulus dan terawat\r\nInterior bersih\r\nMesin / baterai normal\r\nSuspensi nyaman\r\nPajak hidup\r\nSiap pakai tanpa PR', '2020', 'e9db5e1619a9da8f2c76380d788202ee.jpg'),
-(22, 4, 'Pajero Sport', 500000000, 1, 'tersedia', 'mobil ini bagus mantap sangat cocok untuk perjalanan jauh', '2020', '4995153399e03c2cab9a722888eeb559.jpg');
+(16, 3, 'Honda Civic FL5', '425000000', 1, 'tersedia', 'Honda Civic 2021 – Sedan premium dengan desain sporty dan performa bertenaga yang siap pakai.\r\n\r\nSpesifikasi & Kondisi:\r\n\r\nTransmisi: Otomatis (CVT) halus dan responsif\r\n\r\nWarna: Hitam Metalik\r\n\r\nOdometer: 35.000 KM (Low KM, pemakaian apik)\r\n\r\nSurat: Lengkap (STNK, BPKB, Pajak hidup)\r\n\r\nKeunggulan:\r\n\r\nMesin turbo yang bertenaga namun tetap irit bahan bakar.\r\n\r\nDesain eksterior agresif dengan interior mewah berbahan premium.\r\n\r\nFitur canggih termasuk layar sentuh modern dan sistem keselamatan lengkap.\r\n\r\nKondisi istimewa, mesin kering, kaki-kaki senyap, serta bebas banjir dan tabrakan.', 2021, 'da5374831dd107eb09f9313668823d43.jpg'),
+(20, 3, 'Alphard HEV', '2000000000', 0, 'terjual', 'Toyota Alphard HEV bekas kondisi sangat terawat dan siap pakai. Mengusung mesin hybrid yang irit bahan bakar namun tetap bertenaga, cocok untuk penggunaan harian maupun perjalanan jauh. Interior mewah dan kabin super lega memberikan kenyamanan maksimal untuk keluarga maupun kebutuhan bisnis.\r\n\r\nSpesifikasi singkat:\r\n\r\nMesin Hybrid Electric Vehicle (HEV)\r\nTransmisi otomatis\r\nInterior captain seat premium\r\nSunroof / moonroof\r\nHead unit modern & kamera parkir\r\nAC digital double blower\r\nDoor elektrik & smart key\r\nKilometer rendah dan terawat\r\n\r\nKondisi:\r\n\r\nMesin halus dan normal\r\nPajak hidup\r\nInterior bersih dan rapi\r\nKaki-kaki nyaman\r\nBody mulus\r\nSiap pakai tanpa PR', 2020, '1779376910_8169e7bb1301c57fe025a495139ea1cf.jpg'),
+(21, 3, 'BYD Seal', '250000000', 0, 'terjual', 'BYD kondisi bekas terawat dan siap pakai. Hadir dengan desain modern dan teknologi canggih yang memberikan kenyamanan serta performa responsif saat berkendara. Cocok digunakan untuk harian maupun perjalanan jauh dengan konsumsi energi yang efisien.\r\n\r\nSpesifikasi singkat:\r\n\r\nMotor listrik bertenaga & responsif\r\nTransmisi otomatis\r\nInterior premium modern\r\nHead unit touchscreen\r\nKamera parkir & sensor\r\nAC digital\r\nSmart key & start stop button\r\nFitur keselamatan lengkap\r\n\r\nKondisi:\r\n\r\nBody mulus dan terawat\r\nInterior bersih\r\nMesin / baterai normal\r\nSuspensi nyaman\r\nPajak hidup\r\nSiap pakai tanpa PR', 2020, 'e9db5e1619a9da8f2c76380d788202ee.jpg'),
+(22, 4, 'Pajero Sport', '500000000', 1, 'terjual', 'mobil ini bagus mantap sangat cocok untuk perjalanan jauh', 2020, '4995153399e03c2cab9a722888eeb559.jpg'),
+(23, 5, 'Civic', '100000000', 1, 'tersedia', 'mantap hebat ngebut', 2015, 'da5374831dd107eb09f9313668823d43.jpg');
 
 -- --------------------------------------------------------
 
@@ -152,18 +153,29 @@ CREATE TABLE `pembayaran` (
   `status` enum('pending','verifikasi','diterima') DEFAULT NULL,
   `bukti_pembayaran` varchar(255) NOT NULL,
   `jenis_pembayaran` enum('booking','dp','pelunasan') DEFAULT 'booking'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `pembayaran`
 --
 
 INSERT INTO `pembayaran` (`id_pembayaran`, `id_pemesanan`, `metode_bayar`, `jumlah`, `status`, `bukti_pembayaran`, `jenis_pembayaran`) VALUES
-(41, 38, 'tunai', 500000.00, 'diterima', '-', 'booking'),
-(42, 38, '', 127000000.00, 'diterima', '-', 'dp'),
-(43, 38, '', 297500000.00, 'diterima', '-', 'pelunasan'),
-(44, 39, 'transfer', 500000.00, 'diterima', 'bukti_booking_1779374034_4837.jpg', 'booking'),
-(45, 39, '', 127000000.00, 'diterima', '-', 'dp');
+(41, 38, 'tunai', '500000.00', 'diterima', '-', 'booking'),
+(42, 38, '', '127000000.00', 'diterima', '-', 'dp'),
+(43, 38, '', '297500000.00', 'diterima', '-', 'pelunasan'),
+(44, 39, 'transfer', '500000.00', 'diterima', 'bukti_penawaran_1778953816_1852.jpg', 'booking'),
+(45, 39, '', '127000000.00', 'diterima', '-', 'dp'),
+(46, 40, 'transfer', '500000.00', 'diterima', 'bukti_booking_1779804940_9907.jpg', 'booking'),
+(47, 40, '', '499500000.00', 'diterima', '-', 'pelunasan'),
+(48, 41, '', '500000.00', 'diterima', '-', 'booking'),
+(49, 41, '', '74500000.00', 'diterima', '-', 'dp'),
+(50, 41, '', '175000000.00', 'diterima', '-', 'pelunasan'),
+(51, 42, 'tunai', '500000.00', 'diterima', '-', 'booking'),
+(52, 42, '', '149500000.00', 'diterima', '-', 'dp'),
+(53, 42, '', '350000000.00', 'diterima', '-', 'pelunasan'),
+(54, 43, 'tunai', '500000.00', 'diterima', '-', 'booking'),
+(55, 43, '', '599500000.00', 'diterima', '-', 'dp'),
+(56, 43, '', '1400000000.00', 'diterima', '-', 'pelunasan');
 
 -- --------------------------------------------------------
 
@@ -178,14 +190,16 @@ CREATE TABLE `pembeli` (
   `alamat` text DEFAULT NULL,
   `no_hp` varchar(15) DEFAULT NULL,
   `foto` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `pembeli`
 --
 
 INSERT INTO `pembeli` (`id_pembeli`, `id_user`, `nama`, `alamat`, `no_hp`, `foto`) VALUES
-(8, 19, 'Mahesa Ibrahim', 'JL ARIA SANTIKA GG SAMAUN RT 5 RW 5', '085693419679', '1778812854_profil_19.jpg');
+(8, 19, 'Mahesa Ibrahim', 'JL ARIA SANTIKA GG SAMAUN RT 5 RW 5', '085693419679', '1778812854_profil_19.jpg'),
+(10, 24, 'Nabila Khoirunnisa', 'taman kota permai 2', '081210104860', '1779805834_profil_24.jpg'),
+(11, 25, 'fauzi', 'Pasar Kemis', '0834234234234', NULL);
 
 -- --------------------------------------------------------
 
@@ -202,15 +216,19 @@ CREATE TABLE `pemesanan` (
   `status` enum('booking','dp','lunas','batal') DEFAULT 'booking',
   `deadline_dp` date DEFAULT NULL,
   `foto_ktp` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `pemesanan`
 --
 
 INSERT INTO `pemesanan` (`id_pemesanan`, `id_pembeli`, `id_mobil`, `tanggal_pesan`, `total_harga`, `status`, `deadline_dp`, `foto_ktp`) VALUES
-(38, 8, 16, '2026-05-21 17:15:36', 425000000.00, 'lunas', '2026-05-28', 'ktp_1779359328_3065.jpg'),
-(39, 8, 16, '2026-05-21 21:33:54', 425000000.00, 'dp', '2026-05-28', 'ktp_1779379798_3365.jpg');
+(38, 8, 16, '2026-05-21 17:15:36', '425000000.00', 'lunas', '2026-05-28', 'ktp_1779359328_3065.jpg'),
+(39, 8, 16, '2026-05-21 21:33:54', '425000000.00', 'dp', '2026-05-28', 'ktp_1779379798_3365.jpg'),
+(40, 8, 22, '2026-05-26 21:15:40', '500000000.00', 'lunas', '2026-06-02', 'ktp_1779805398_3883.jpg'),
+(41, 10, 21, '2026-05-26 21:31:13', '250000000.00', 'lunas', '2026-06-02', 'ktp_1779805943_9752.jpg'),
+(42, 11, 22, '2026-06-02 11:15:36', '500000000.00', 'lunas', '2026-06-09', 'ktp_1780373867_8375.jpg'),
+(43, 8, 20, '2026-06-02 12:32:48', '2000000000.00', 'lunas', '2026-06-09', 'ktp_1780378413_7812.jpg');
 
 -- --------------------------------------------------------
 
@@ -230,14 +248,15 @@ CREATE TABLE `penawaran` (
   `catatan_admin` text DEFAULT NULL,
   `catatan` text DEFAULT NULL,
   `bukti_pembayaran` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `penawaran`
 --
 
 INSERT INTO `penawaran` (`id_penawaran`, `id_penjual`, `id_mobil`, `harga_tawar`, `tanggal`, `status`, `metode_pembayaran`, `tanggal_keputusan`, `catatan_admin`, `catatan`, `bukti_pembayaran`) VALUES
-(4, 3, 16, 425000000.00, '2026-05-21', 'diterima', 'tunai', '2026-05-21 17:14:37', '', 'Honda Civic 2021 – Sedan premium dengan desain sporty dan performa bertenaga yang siap pakai.\r\n\r\nSpesifikasi & Kondisi:\r\n\r\nTransmisi: Otomatis (CVT) halus dan responsif\r\n\r\nWarna: Hitam Metalik\r\n\r\nOdometer: 35.000 KM (Low KM, pemakaian apik)\r\n\r\nSurat: Lengkap (STNK, BPKB, Pajak hidup)\r\n\r\nKeunggulan:\r\n\r\nMesin turbo yang bertenaga namun tetap irit bahan bakar.\r\n\r\nDesain eksterior agresif dengan interior mewah berbahan premium.\r\n\r\nFitur canggih termasuk layar sentuh modern dan sistem keselamatan lengkap.\r\n\r\nKondisi istimewa, mesin kering, kaki-kaki senyap, serta bebas banjir dan tabrakan.', NULL);
+(4, 3, 16, '425000000.00', '2026-05-21', 'diterima', 'tunai', '2026-05-21 17:14:37', '', 'Honda Civic 2021 – Sedan premium dengan desain sporty dan performa bertenaga yang siap pakai.\r\n\r\nSpesifikasi & Kondisi:\r\n\r\nTransmisi: Otomatis (CVT) halus dan responsif\r\n\r\nWarna: Hitam Metalik\r\n\r\nOdometer: 35.000 KM (Low KM, pemakaian apik)\r\n\r\nSurat: Lengkap (STNK, BPKB, Pajak hidup)\r\n\r\nKeunggulan:\r\n\r\nMesin turbo yang bertenaga namun tetap irit bahan bakar.\r\n\r\nDesain eksterior agresif dengan interior mewah berbahan premium.\r\n\r\nFitur canggih termasuk layar sentuh modern dan sistem keselamatan lengkap.\r\n\r\nKondisi istimewa, mesin kering, kaki-kaki senyap, serta bebas banjir dan tabrakan.', NULL),
+(6, 5, 23, '100000000.00', '2026-06-02', 'diterima', 'tunai', '2026-06-02 12:14:59', '.', '', NULL);
 
 -- --------------------------------------------------------
 
@@ -253,14 +272,16 @@ CREATE TABLE `pengiriman` (
   `status` enum('diproses','dikirim','selesai','terkirim') DEFAULT 'diproses',
   `bukti_pengiriman` varchar(255) DEFAULT NULL,
   `tanggal_terkirim` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `pengiriman`
 --
 
 INSERT INTO `pengiriman` (`id_pengiriman`, `id_pemesanan`, `id_kurir`, `alamat_kirim`, `status`, `bukti_pengiriman`, `tanggal_terkirim`) VALUES
-(6, 38, 1, 'JL ARIA SANTIKA GG SAMAUN RT 5 RW 5', 'terkirim', 'bukti_pengiriman_1779772850_1131.jpg', '2026-05-26 12:20:50');
+(6, 38, 1, 'JL ARIA SANTIKA GG SAMAUN RT 5 RW 5', 'terkirim', '1778322141_Screenshot_8-5-2026_17547_www.bing.com.jpeg', '2026-05-26 12:20:50'),
+(7, 42, 1, 'Pasar Kemis', 'terkirim', 'bukti_pengiriman_1780374155_8329.jpg', '2026-06-02 11:22:35'),
+(8, 43, 1, 'JL ARIA SANTIKA GG SAMAUN RT 5 RW 5', 'terkirim', 'bukti_pengiriman_1780378721_3543.jpg', '2026-06-02 12:38:41');
 
 -- --------------------------------------------------------
 
@@ -275,7 +296,7 @@ CREATE TABLE `penjual` (
   `alamat` text DEFAULT NULL,
   `no_hp` varchar(15) DEFAULT NULL,
   `foto` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `penjual`
@@ -283,7 +304,8 @@ CREATE TABLE `penjual` (
 
 INSERT INTO `penjual` (`id_penjual`, `id_user`, `nama`, `alamat`, `no_hp`, `foto`) VALUES
 (3, 21, 'Titania Najwa', 'Perumahan sukatani permai blok E no 9', '08582323232323', '1778953216_profil_21.jpg'),
-(4, 23, 'Ibrahim Mahesa', 'Jl aria santika gg samaun rt 3 rw 3 sumur pacing kota tangerang banten', '085693410670', NULL);
+(4, 23, 'Ibrahim Mahesa', 'Jl aria santika gg samaun rt 3 rw 3 sumur pacing kota tangerang banten', '085693410670', NULL),
+(5, 26, 'maylita', 'kampung sondol', '081234567856', NULL);
 
 -- --------------------------------------------------------
 
@@ -295,7 +317,14 @@ CREATE TABLE `surat_jalan` (
   `id_suratjalan` int(11) NOT NULL,
   `id_pengiriman` int(11) DEFAULT NULL,
   `tanggal_cetak` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `surat_jalan`
+--
+
+INSERT INTO `surat_jalan` (`id_suratjalan`, `id_pengiriman`, `tanggal_cetak`) VALUES
+(4, 7, '2026-06-02 11:23:17');
 
 -- --------------------------------------------------------
 
@@ -308,7 +337,7 @@ CREATE TABLE `users` (
   `username` varchar(50) DEFAULT NULL,
   `password` varchar(100) DEFAULT NULL,
   `role` enum('admin','pembeli','penjual','kurir') DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
@@ -319,7 +348,10 @@ INSERT INTO `users` (`id_user`, `username`, `password`, `role`) VALUES
 (19, 'pembeli123', '$2y$10$kmQLqo5Eb17Pad/xN6fPwO3dfs03s5yhBQty2qEQlaiGc.R70.zUm', 'pembeli'),
 (20, 'kurir123', '$2y$10$KdjjhVoqFfoW2CBAAM7zbOxFwVizbjEJjUhX/QuRXtfF01XSPY6de', 'kurir'),
 (21, 'penjual123', '$2y$10$rinTb5y67a6DXPXHfVd7lOiKXWjz0jHJfUOTocMxC3ZGSqwyo/gyO', 'penjual'),
-(23, 'penjual456', '$2y$10$n0SRFgoss765it57ASihhu4KSVFxdxFJ8tIVgMcYX6lWylzNtrBeu', 'penjual');
+(23, 'penjual456', '$2y$10$n0SRFgoss765it57ASihhu4KSVFxdxFJ8tIVgMcYX6lWylzNtrBeu', 'penjual'),
+(24, 'pembeli', '$2y$10$tV8FCmwI9zvj5VpJrDn33uuaGqdi5n0CL4MmZ0rECjeWNFMVW2fMa', 'pembeli'),
+(25, 'fauzi123', '$2y$10$m9P3zHOuxuq1mVl4EG5F..r70mryFAffQjqSY3E4UMkLwQ5nNCoqS', 'pembeli'),
+(26, 'lita', '$2y$10$lrenxNwkT388v/JtDO9N5.H1.NdpjIzVnSKQKVwjGxbkgSegEW.Te', 'penjual');
 
 --
 -- Indexes for dumped tables
@@ -461,55 +493,55 @@ ALTER TABLE `laporan`
 -- AUTO_INCREMENT for table `mobil`
 --
 ALTER TABLE `mobil`
-  MODIFY `id_mobil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_mobil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `pembayaran`
 --
 ALTER TABLE `pembayaran`
-  MODIFY `id_pembayaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id_pembayaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT for table `pembeli`
 --
 ALTER TABLE `pembeli`
-  MODIFY `id_pembeli` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_pembeli` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `pemesanan`
 --
 ALTER TABLE `pemesanan`
-  MODIFY `id_pemesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id_pemesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `penawaran`
 --
 ALTER TABLE `penawaran`
-  MODIFY `id_penawaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_penawaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `pengiriman`
 --
 ALTER TABLE `pengiriman`
-  MODIFY `id_pengiriman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_pengiriman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `penjual`
 --
 ALTER TABLE `penjual`
-  MODIFY `id_penjual` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_penjual` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `surat_jalan`
 --
 ALTER TABLE `surat_jalan`
-  MODIFY `id_suratjalan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_suratjalan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- Constraints for dumped tables
